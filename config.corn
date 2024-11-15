@@ -66,7 +66,7 @@ let {
 		type = "volume"
 		format = "{icon} {percentage}%"
 		max_volume = 100
-		icons.volume_high = ""
+		icons.volume_high = " "
 		icons.volume_medium = ""
 		icons.volume_low = ""
 		icons.muted = "󰝟"
