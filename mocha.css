@@ -25,7 +25,6 @@
 @define-color mantle #181825;
 @define-color crust #11111b;
 
-#------------------
 @define-color purple1 #d16aff;
 @define-color pink5 #ff4cc1;
 
@@ -40,10 +39,6 @@
 @define-color grad9 #ec8cb0;
 @define-color grad10 #f38ba8;
 
-
-
-
-#--------------
 @define-color blue1 #e5e5ff;
 @define-color blue2 #7f7fff;
 @define-color blue3 #0000ff;
@@ -69,4 +64,3 @@
 @define-color sky_blue9 #007b8e;
 @define-color sky_blue10 #005c6b;
 @define-color sky_blue11 #003d47;
-
