@@ -8,9 +8,15 @@ let {
 
 	$hyprland_layout = {
 		type = "script"
+		name = "hyprland_layout"
 		cmd = "hyprctl -j getoption general:layout | jq '.str' | sed 's/\"//g' | sed 's/$/ layout /' "
 		mode = "poll"
 		interval = 500
+	}
+	$mpc_info = {
+		type = "label"
+		name = "mpc_info"
+		label = "{{100:~/.config/ironbar/scripts/mpc_info.sh}}"
 	}
 
 	$focused = {
@@ -72,7 +78,7 @@ let {
 		icons.muted = "󰝟"
 		on_scroll_down = "wpctl set-volume @DEFAULT_SINK@ 2%-"
 		on_scroll_up = "wpctl set-volume @DEFAULT_SINK@ 2%+"
-		tooltip = "{{/home/bluebyt/.config/ironbar/scripts/volume}}%"
+		tooltip = "{{/home/francois/.config/ironbar/scripts/volume}}%"
 	}
 
 	$workspace = {
@@ -214,7 +220,7 @@ let {
 	}
 
 	// $start = [ $music $focused $hyprland_layout ]
-	$start = [ $music $hyprland_layout ]
+	$start = [ $music $mpc_info $hyprland_layout ]
 	$center = [ $workspace ]
 	$end = [ $volume $pacman $SysInfo $clock $wlogout ]
 }

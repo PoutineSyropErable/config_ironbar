@@ -211,6 +211,18 @@
 	/* background: #9abdf5; */
 	/* color: #4c566a; */
 }
+.label {
+	padding: 0px 8px;
+	margin-top: 3px;
+	margin-bottom: 10px;
+	margin-right: 5px;
+	border-radius: 10px;
+	box-shadow: rgba(0, 0, 0, 0.2) 1px 1px 4px 1px;
+
+	font-size: 14px; /* Adjust font size */
+	color: @grad6; /* Text color (white) */
+	background-color: #1a1b26; /* Background color (dark) */
+}
 
 .music {
 	border-radius: 10px;
