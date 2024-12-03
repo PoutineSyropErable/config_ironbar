@@ -332,3 +332,55 @@
   background-color: #7dcfff; 
 }
 
+/* General styling for the battery module */
+.upower {
+  /* padding: 4px; */
+  /* margin-top: 3px; */
+  /* margin-bottom: 10px; */
+  margin-right: 8px;
+  margin-left: 8px;
+  border-radius: 10px;
+  background: #1a1b26;
+  box-shadow: rgba(0, 0, 0, 0.2) 1px 1px 4px 1px;
+  opacity: 0.8;
+  /* align-items: center; */
+  font-family:  CaskaydiaCove Nerd Font;
+  font-size: 14px;
+  color: #ffffff;
+}
+
+/* /1* Styling for the battery icon *1/ */
+.upower .icon {
+	/* content: ""; */
+  /* margin-right: 6px; */
+}
+
+/* Styling for the battery label */
+.upower .label {
+  font-weight: bold;
+  color: #00ff00;
+}
+
+/* Low battery warning (e.g., <20%) */
+.upower.low .label {
+  color: #ff0000;
+}
+
+/* Popup for additional details */
+.popup-upower {
+  padding: 8px;
+  border-radius: 10px;
+  background: #24283b;
+  color: #e0e0e0;
+  box-shadow: rgba(0, 0, 0, 0.3) 2px 2px 6px;
+  font-size: 12px;
+}
+
+/* Styling for detailed battery information inside the popup */
+.popup-upower .upower-details {
+  font-size: 12px;
+  color: #cccccc;
+  margin-top: 2px;
+  margin-bottom: 2px;
+}
+

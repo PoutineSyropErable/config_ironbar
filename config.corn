@@ -14,6 +14,12 @@ let {
 		interval = 500
 	}
 
+	$battery = {
+		//battery fucking sucks!
+	type = "upower"
+    format = "{percentage}% {time_remaining}"
+  }
+
 	$focused = {
 		type = "focused"
 		show_icon = false
