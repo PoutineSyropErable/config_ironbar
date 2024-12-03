@@ -303,3 +303,32 @@
 	background: #545c7e;
 	border-radius: 15px;
 }
+
+.tray {
+  padding: 4px;
+  margin-top: 3px;
+  margin-bottom: 10px;
+  margin-right: 8px;
+  margin-left: 8px;
+  border-radius: 10px;
+  background: #1a1b26;
+  box-shadow: rgba(0, 0, 0, 0.2) 1px 1px 4px 1px;
+  opacity: 0.8;
+}
+
+.tray .item {
+  margin: 0 4px;
+  border-radius: 4px;
+  background-color: #545c7e; 
+  box-shadow: rgba(0, 0, 0, 0.2) 1px 1px 4px 1px;
+  transition: transform 0.2s ease, background-color 0.2s ease;
+}
+
+.tray .item:hover {
+  background-color: #c3e88d;
+}
+
+.tray .item:active {
+  background-color: #7dcfff; 
+}
+

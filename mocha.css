@@ -64,3 +64,18 @@
 @define-color sky_blue9 #007b8e;
 @define-color sky_blue10 #005c6b;
 @define-color sky_blue11 #003d47;
+
+
+/* Primary yellow shades */
+@define-color yellow1 #f9c70c; /* Deep golden yellow */
+@define-color yellow2 #fed000; /* Bright sunflower yellow */
+@define-color yellow3 #ffe338; /* Light yellow */
+@define-color yellow4 #f4bc1c; /* Warm golden yellow */
+
+/* Light yellow shades */
+@define-color light_yellow1 #fffee0; /* Very pale yellow */
+@define-color light_yellow2 #fffec8; /* Pale yellow */
+@define-color light_yellow3 #fffdaf; /* Light cream yellow */
+@define-color light_yellow4 #fffd8d; /* Bright light yellow */
+@define-color light_yellow5 #fdfa72; /* Vibrant lemon yellow */
+

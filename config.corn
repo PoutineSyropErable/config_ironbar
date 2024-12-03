@@ -2,7 +2,7 @@ let {
 	$tray = { type = "tray" }
 	$clock = {
 		type = "clock"
-		format = " %B %d  %H:%M"
+		format = " %b %d  %H:%M:%S"
 		// format = "%d/%m/%Y %H:%M"
 	}
 
@@ -12,11 +12,6 @@ let {
 		cmd = "hyprctl -j getoption general:layout | jq '.str' | sed 's/\"//g' | sed 's/$/ layout /' "
 		mode = "poll"
 		interval = 500
-	}
-	$mpc_info = {
-		type = "label"
-		name = "mpc_info"
-		label = "{{100:~/.config/ironbar/scripts/mpc_info.sh}}"
 	}
 
 	$focused = {
@@ -32,16 +27,23 @@ let {
 
 	$music = {
 		type = "music"
-		player_type = "mpd"
+		player_type = "mpris"
 		format = "{title}/{artist}"
-		// truncate = "end"
-		// truncate.length = 30
-		// truncate.max_length = 100
+		// truncate = "end" is wrong. Dont use it
+		truncate.mode = "end"
+		// truncate.length = 30 Does nothing
+		truncate.max_length = 40
 		icons.play = " "
 		icons.pause = " "
 		icons.prev = ""
 		icons.next = ""
 		music_dir = "/home/francois/Music/My Music"
+	}
+
+	$mpc_info = {
+		type = "label"
+		name = "mpc_info"
+		label = "{{100:~/.config/ironbar/scripts/mpc_info.sh}}"
 	}
 
 	$SysInfo = { 
@@ -105,6 +107,16 @@ let {
 		name_map.18 = "18: "  
 		name_map.19 = "19:󰯂 "  
 		name_map.20 = "20: "
+		name_map.21 = "21: "  
+		name_map.22 = "22: "  
+		name_map.23 = "23: "  
+		name_map.24 = "24: "  
+		name_map.25 = "25:󰄨 "  
+		name_map.26 = "26: "  
+		name_map.27 = "27: "  
+		name_map.28 = "28: "  
+		name_map.29 = "29:󰯂 "  
+		name_map.30 = "30: "
 		on_scroll_up = "hyprctl dispatch workspace e-1"
 		on_scroll_down = "hyprctl dispatch workspace e+1"
 	}
@@ -223,6 +235,7 @@ let {
 	$start = [ $music $mpc_info $hyprland_layout ]
 	$center = [ $workspace ]
 	$end = [ $volume $pacman $SysInfo $clock $wlogout ]
+	// $end = [ $volume $pacman $SysInfo $clock $tray $wlogout ]
 }
 	in {
 	icon_theme = "Tela-circle-nord"
