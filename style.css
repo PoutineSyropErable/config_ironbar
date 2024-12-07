@@ -286,13 +286,12 @@
   opacity: 1;
 }
 
-/* Inactive Workspaces (favorite but not open) */
-.workspaces .item.inactive {
-  color: @subtext0; /* White text */
-  background: @surface0; /* Gray background */
-  border-radius: 15px;
-  opacity: 1; /* Fully opaque */
-}
+/* .workspaces .item.inactive { */
+/*   color: #ffffff; */
+/*   background: #545c7e; */
+/*   border-radius: 15px; */
+/*   opacity: 1; */
+/* } */
 
 .workspaces .item.visible:not(.focused) {
   color: #ffffff; /* Keeps text color white for readability */

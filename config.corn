@@ -49,7 +49,7 @@ let {
 	$mpc_info = {
 		type = "label"
 		name = "mpc_info"
-		label = "{{100:~/.config/ironbar/scripts/mpc_info.sh}}"
+		label = "{{100:~/.config/ironbar/scripts/playerctl_info.sh}}"
 	}
 
 	$SysInfo = { 
@@ -90,9 +90,9 @@ let {
 	}
 
 	$workspace = {
-		type = "workspaces"
-		sort = "alphanumeric"
 		// favorites = [ "1" "2" "3" ]
+		type = "workspaces"
+		// sort = "alphanumeric"
 		name_map.1 = "1: "  
 		name_map.2 = "2: "  
 		name_map.3 = "3: "  
