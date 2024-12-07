@@ -5,20 +5,6 @@
 #Exit the script if no music players running
 [[ "$(playerctl status 2>&1)" = "No players found" ]] && exit 33;
 
-# # Define cursor icons
-# playIcon="";
-# pauseIcon=" \u23f8\ufe0f";
-# stopIcon=" \u23f9\ufe0f";
-
-
-##Mouse actions for the block
-#case $BLOCK_BUTTON in
-#	1) playerctl $ARGUMENTS previous ;;
-#	2) playerctl $ARGUMENTS play-pause ;;
-#	3) playerctl $ARGUMENTS next ;;
-#	4) playerctl $ARGUMENTS position 5+ ;;
-#	5) playerctl $ARGUMENTS position 5- ;;
-#esac
 
 #Define song info variables
 playerStatus=$(playerctl status);
