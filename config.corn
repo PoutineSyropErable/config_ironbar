@@ -49,7 +49,8 @@ let {
 	$mpc_info = {
 		type = "label"
 		name = "mpc_info"
-		label = "{{100:~/.config/ironbar/scripts/playerctl_info.sh}}"
+		// label = "{{100:~/.config/ironbar/scripts/playerctl_info.sh}}"
+		label = "{{100:~/.config/ironbar/scripts/mpc_info.sh}}"
 	}
 
 	$SysInfo = { 
@@ -101,7 +102,7 @@ let {
 		name_map.6 = "6: "  
 		name_map.7 = "7: "  
 		name_map.8 = "8: "  
-		name_map.9 = "9:󰯂 "  
+		name_map.9 = "9:󰊴 "  
 		name_map.10 = "10: " 
 		name_map.11 = "11: "  
 		name_map.12 = "12: "  
@@ -111,7 +112,8 @@ let {
 		name_map.16 = "16: "  
 		name_map.17 = "17: "  
 		name_map.18 = "18: "  
-		name_map.19 = "19:󰯂 "  
+		name_map.19 = "19:󰊗 "  
+		// name_map.19 = "19:󰯂 "  
 		name_map.20 = "20: "
 		name_map.21 = "21: "  
 		name_map.22 = "22: "  
@@ -224,7 +226,8 @@ let {
 				type = "label"
 				name = "pacman"
 				class = "pacman"
-				label = " {{600000:checkupdates | wc -l}}"
+				// label = " {{6000:checkupdates | wc -l}}"
+				label = " {{6000:yay -Qu | wc -l}}"
 			}
 		]
 	}
