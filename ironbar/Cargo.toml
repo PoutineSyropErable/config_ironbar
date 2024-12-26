@@ -1,0 +1,176 @@
+[package]
+name = "ironbar"
+version = "0.16.1"
+edition = "2021"
+license = "MIT"
+description = "Customisable GTK Layer Shell wlroots/sway bar"
+repository = "https://github.com/jakestanger/ironbar"
+categories = ["gui"]
+keywords = ["gtk", "bar", "wayland", "wlroots", "gtk-layer-shell"]
+
+[features]
+default = [
+    "cli",
+    "cairo",
+    "clipboard",
+    "clock",
+    "config+all",
+    "focused",
+    "http",
+    "ipc",
+    "launcher",
+    "music+all",
+    "network_manager",
+    "notifications",
+    "sys_info",
+    "tray",
+    "upower",
+    "volume",
+    "workspaces+all"
+]
+
+cli = ["dep:clap", "ipc"]
+ipc = ["dep:serde_json"]
+
+http = ["dep:reqwest"]
+
+"config+all" = [
+  "config+json",
+  "config+yaml",
+  "config+toml",
+  "config+corn",
+  "config+ron",
+]
+"config+json" = ["universal-config/json"]
+"config+yaml" = ["universal-config/yaml"]
+"config+toml" = ["universal-config/toml"]
+"config+corn" = ["universal-config/corn"]
+"config+ron" = ["universal-config/ron"]
+
+cairo = ["lua-src", "mlua", "cairo-rs"]
+
+clipboard = ["nix"]
+
+clock = ["chrono"]
+
+focused = []
+
+launcher = []
+
+music = ["regex"]
+"music+all" = ["music", "music+mpris", "music+mpd"]
+"music+mpris" = ["music", "mpris"]
+"music+mpd" = ["music", "mpd-utils"]
+
+network_manager = ["futures-lite", "futures-signals", "zbus"]
+
+notifications = ["zbus"]
+
+sys_info = ["sysinfo", "regex"]
+
+tray = ["system-tray"]
+
+upower = ["upower_dbus", "zbus", "futures-lite"]
+
+volume = ["libpulse-binding"]
+
+workspaces = ["futures-lite"]
+"workspaces+all" = ["workspaces", "workspaces+sway", "workspaces+hyprland"]
+"workspaces+sway" = ["workspaces", "sway"]
+"workspaces+hyprland" = ["workspaces", "hyprland"]
+
+sway = ["swayipc-async"]
+
+schema = ["dep:schemars"]
+
+[dependencies]
+# core
+gtk = "0.18.1"
+gtk-layer-shell = "0.8.1"
+glib = "0.18.5"
+tokio = { version = "1.41.1", features = [
+  "macros",
+  "rt-multi-thread",
+  "time",
+  "process",
+  "sync",
+  "io-util",
+  "net",
+] }
+tracing = "0.1.41"
+tracing-subscriber = { version = "0.3.17", features = ["env-filter"] }
+tracing-error = { version = "0.2.1" , default-features = false }
+tracing-appender = "0.2.3"
+strip-ansi-escapes = "0.2.0"
+color-eyre = "0.6.3"
+serde = { version = "1.0.215", features = ["derive"] }
+indexmap = "2.7.0"
+dirs = "5.0.1"
+walkdir = "2.5.0"
+notify = { version = "7.0.0", default-features = false }
+wayland-client = "0.31.1"
+wayland-protocols-wlr = { version = "0.2.0", features = ["client"] }
+smithay-client-toolkit = { version = "0.18.1", default-features = false, features = [
+  "calloop",
+] }
+universal-config = { version = "0.5.0", default-features = false }
+ctrlc = "3.4.5"
+cfg-if = "1.0.0"
+
+# cli
+clap = { version = "4.5.21", optional = true, features = ["derive"] }
+
+# ipc
+serde_json = { version = "1.0.133", optional = true }
+
+# http
+reqwest = { version = "0.12.9", default-features = false, features = ["default-tls", "http2"], optional = true }
+
+# cairo
+lua-src =  {  version = "547.0.0", optional = true }
+mlua = { version = "0.9.9", optional = true, features = ["luajit"] }
+cairo-rs = { version = "0.18.5", optional = true, features = ["png"] }
+
+# clipboard
+nix = { version = "0.29.0", optional = true, features = ["event", "fs"] }
+
+# clock
+chrono = { version = "0.4.38", optional = true, default-features = false, features = ["clock", "unstable-locales"] }
+
+# music
+mpd-utils = { version = "0.2.1", optional = true }
+mpris = { version = "2.0.1", optional = true }
+
+# network_manager
+futures-signals = { version = "0.3.34", optional = true }
+
+# sys_info
+sysinfo = { version = "0.29.11", optional = true }
+
+# tray
+system-tray = { version = "0.4.0", features = ["dbusmenu-gtk3"], optional = true }
+
+# upower
+upower_dbus = { version = "0.3.2", optional = true }
+
+# volume
+libpulse-binding = { version = "2.28.2", optional = true }
+
+# workspaces
+swayipc-async = { version = "2.0.1", optional = true }
+hyprland = { version = "0.4.0-alpha.3", features = ["silent"], optional = true }
+futures-util = { version = "0.3.31", optional = true }
+
+# shared
+futures-lite = { version = "2.5.0", optional = true } # network_manager, upower, workspaces
+regex = { version = "1.11.1", default-features = false, features = [
+  "std",
+], optional = true } # music, sys_info
+zbus = { version = "3.15.2", default-features = false, features = ["tokio"], optional = true } # network_manager, notifications, upower
+
+# schema
+schemars = { version = "0.8.21", optional = true }
+
+# -- PATCH --
+# temp fix for tracing-appender/time
+time = "0.3.36"
