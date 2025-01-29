@@ -227,7 +227,7 @@ let {
 				name = "pacman"
 				class = "pacman"
 				// label = " {{6000:checkupdates | wc -l}}"
-				label = " {{6000:yay -Qu | wc -l}}"
+				label = " {{600000:yay -Qu | wc -l}}"
 			}
 		]
 	}
