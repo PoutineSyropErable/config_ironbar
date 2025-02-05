@@ -1,5 +1,5 @@
 [submodule "ironbar_custom_build"]
-	path = ironbar/ironbar_workspace_ordered/
+	path = ironbar_workspace_ordered/
 	url = https://github.com/PoutineSyropErable/ironbar_worksace_order
 	branch = master
 
