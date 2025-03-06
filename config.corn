@@ -39,8 +39,8 @@ let {
 		truncate.mode = "end"
 		// truncate.length = 30 Does nothing
 		truncate.max_length = 40
-		icons.play = " "
-		icons.pause = " "
+		icons.play = " "
+		icons.pause = " "
 		icons.prev = ""
 		icons.next = ""
 		music_dir = "/home/francois/Music/My Music"
@@ -51,6 +51,12 @@ let {
 		name = "mpc_info"
 		// label = "{{100:~/.config/ironbar/scripts/playerctl_info.sh}}"
 		label = "{{100:~/.config/ironbar/scripts/mpc_info.sh}}"
+	}
+	$mpris_info = {
+		type = "label"
+		name = "mpris_info"
+		// label = "{{100:~/.config/ironbar/scripts/playerctl_info.sh}}"
+		label = "{{100:~/.config/ironbar/scripts/playerctl_info.sh}}"
 	}
 
 	$SysInfo = { 
@@ -241,15 +247,15 @@ let {
 	}
 
 	// $start = [ $music $focused $hyprland_layout ]
-	$start = [ $music $mpc_info $hyprland_layout ]
+	$left = [ $music $mpris_info $hyprland_layout ]
 	$center = [ $workspace ]
-	$end = [ $volume $pacman $SysInfo $clock $wlogout ]
+	$right = [ $volume $pacman $SysInfo $clock $wlogout ]
 	// $end = [ $volume $pacman $SysInfo $clock $tray $wlogout ]
 }
 	in {
 	icon_theme = "Tela-circle-nord"
 	position = "top"
-	start = $start
+	start = $left
 	center = $center
-	end = $end
+	end = $right
 }
