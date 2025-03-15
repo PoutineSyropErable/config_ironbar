@@ -118,8 +118,8 @@ let {
 		name_map.16 = "16: "  
 		name_map.17 = "17: "  
 		name_map.18 = "18: "  
-		name_map.19 = "19:󰊗 "  
-		// name_map.19 = "19:󰯂 "  
+		// name_map.19 = "19:󰊗 "  
+		name_map.19 = "19:󰯂 "  
 		name_map.20 = "20: "
 		name_map.21 = "21: "  
 		name_map.22 = "22: "  
@@ -247,7 +247,7 @@ let {
 	}
 
 	// $start = [ $music $focused $hyprland_layout ]
-	$left = [ $music $mpris_info $hyprland_layout ]
+	$left = [ $music $mpc_info $hyprland_layout ]
 	$center = [ $workspace ]
 	$right = [ $volume $pacman $SysInfo $clock $wlogout ]
 	// $end = [ $volume $pacman $SysInfo $clock $tray $wlogout ]
