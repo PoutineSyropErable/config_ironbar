@@ -99,7 +99,7 @@ let {
 	$workspace = {
 		// favorites = [ "1" "2" "3" ]
 		type = "workspaces"
-		// sort = "alphanumeric"
+		sort = "name" // Nice, now i have proper ordering
 		name_map.1 = "1: "  
 		name_map.2 = "2: "  
 		name_map.3 = "3: "  
