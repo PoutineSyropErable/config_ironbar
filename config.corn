@@ -101,7 +101,8 @@ let {
 		type = "workspaces"
 		sort = "name" // Nice, now i have proper ordering
 		name_map.1 = "1: "  
-		name_map.2 = "2: "  
+		// name_map.2 = "2: "  
+		name_map.2 = "2: "  
 		name_map.3 = "3: "  
 		name_map.4 = "4: "  
 		name_map.5 = "5:󰄨 "  
@@ -255,6 +256,7 @@ let {
 	in {
 	icon_theme = "Tela-circle-nord"
 	position = "top"
+	monitor = "DP-1"
 	start = $left
 	center = $center
 	end = $right

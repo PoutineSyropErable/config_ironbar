@@ -1,0 +1,120 @@
+# ~/.config/ironbar/config.toml
+
+anchor_to_edges = true
+position = "top"
+icon_theme = "Tela-circle-nord"
+monitor = "DP-2"
+
+[[start]]
+type = "music"
+player_type = "mpris"
+format = "{title}/{artist}"
+truncate.mode = "end"
+truncate.max_length = 40
+icons.play = " "
+icons.pause = " "
+icons.prev = ""
+icons.next = ""
+music_dir = "/home/francois/Music/My Music"
+
+[[start]]
+type = "label"
+name = "mpc_info"
+label = "{{100:~/.config/ironbar/scripts/mpc_info.sh}}"
+
+[[start]]
+type = "script"
+name = "hyprland_layout"
+cmd = "hyprctl -j getoption general:layout | jq '.str' | sed 's/\"//g' | sed 's/$/ layout /' "
+mode = "poll"
+interval = 500
+
+[[center]]
+type = "workspaces"
+sort = "name"
+all_monitors = false
+on_scroll_up = "hyprctl dispatch workspace e-1"
+on_scroll_down = "hyprctl dispatch workspace e+1"
+
+[center.name_map]
+1 = "1:"
+2 = "2:"
+3 = "3:"
+4 = "4:"
+5 = "5:󰄨"
+6 = "6:"
+7 = "7:"
+8 = "8:"
+9 = "9:󰊴"
+10 = "10:"
+11 = "11:"
+12 = "12:"
+13 = "13:"
+14 = "14:"
+15 = "15:󰄨"
+16 = "16:"
+17 = "17:"
+18 = "18:"
+19 = "19:󰯂"
+20 = "20:"
+21 = "21:"
+22 = "22:"
+23 = "23:"
+24 = "24:"
+25 = "25:󰄨"
+26 = "26:"
+27 = "27:"
+28 = "28:"
+29 = "29:󰯂"
+30 = "30:"
+
+[[end]]
+type = "volume"
+format = "{icon} {percentage}%"
+max_volume = 100
+icons.volume_high = " "
+icons.volume_medium = ""
+icons.volume_low = ""
+icons.muted = "󰝟"
+on_scroll_down = "wpctl set-volume @DEFAULT_SINK@ 2%-"
+on_scroll_up = "wpctl set-volume @DEFAULT_SINK@ 2%+"
+tooltip = "{{/home/francois/.config/ironbar/scripts/volume}}%"
+
+[[end]]
+type = "custom"
+class = "pacman"
+
+[[end.bar]]
+type = "label"
+name = "pacman"
+label = " {{600000:yay -Qu -noconfirm | wc -l}}"
+
+[[end]]
+type = "sys_info"
+format = [
+    " {cpu_percent}%",
+    " {memory_percent}%",
+    " {temp_c:k10temp-Tctl}°C", 
+    " {disk_free:/}GB"
+]
+
+[end.interval]
+memory = 30
+cpu = 1
+temps = 3
+disks = 300
+networks = 3
+
+[[end]]
+type = "clock"
+format = " %b %d  %H:%M %Ss"
+
+[[end]]
+type = "custom"
+class = "wlogout"
+
+[[end.bar]]
+type = "button"
+name = "wlogout"
+label = ""
+on_click = "!~/.config/ironbar/scripts/wlogout"
