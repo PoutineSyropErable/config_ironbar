@@ -72,6 +72,7 @@ let {
 			" {memory_percent}%"
 			" {temp_c:k10temp-Tctl}°C"
 			" {disk_free:/}GB"
+			// The disk free is garbage on both machine wtf. Shame on it
 		]
 	}
 
